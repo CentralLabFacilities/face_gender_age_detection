@@ -184,14 +184,15 @@ include_directories(
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+file(GLOB DEPLOY_FILES "${PROJECT_SOURCE_DIR}/scripts/*")
+foreach(ITEM ${DEPLOY_FILES})
+      LIST( APPEND FILES_TO_DEPLOY "${ITEM}" )
+endforeach()
+INSTALL(FILES ${FILES_TO_DEPLOY} DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION} )
 
-catkin_install_python(PROGRAMS scripts/guess_server.py
-                      DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+# file(GLOB_RECURSE source_list "*.cpp" "*.hpp")
+# catkin_install_python(PROGRAMS scripts/guess_server.py DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+# INSTALL(FILES ../src/face_gender_age_detection/scripts DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 #############
 ## Testing ##

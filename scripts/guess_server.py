@@ -28,9 +28,9 @@ GENDER_LIST =['M','F']
 AGE_LIST = ['(0, 2)','(4, 6)','(8, 12)','(15, 20)','(25, 32)','(38, 43)','(48, 53)','(60, 100)']
 MAX_BATCH_SZ = 128
 
+
 pre_trained_age_checkpoint = '/vol/robocup/nightly/share/age_gender/22801/'
 pre_trained_gender_checkpoint = '/vol/robocup/nightly/share/age_gender/21936/'
-
 
 
 def classify_one_multi_crop(sess, label_list, softmax_output, images, img2):

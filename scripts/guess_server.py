@@ -98,10 +98,10 @@ def gender_and_age_detection(req):  # pylint: disable=unused-argument
         label_list = GENDER_LIST
         nlabels = len(label_list)
 
-        print('Executing on /cpu:0')
+        print('Executing on /gpu:0')
         model_fn = select_model('inception')
     
-        with tf.device('/cpu:0'):
+        with tf.device('/gpu:0'):
             
             images = tf.placeholder(tf.float32, [None, RESIZE_FINAL, RESIZE_FINAL, 3])
             logits = model_fn(nlabels, images, 1, False)

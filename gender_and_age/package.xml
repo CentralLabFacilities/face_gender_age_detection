@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package>
   <name>gender_and_age</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <description>The gender_and_age package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="susan@todo.todo">susan</maintainer>
+  <maintainer email="jkummert@techfak.uni-bielefeld.de">Johannes Kummert</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
@@ -42,14 +42,8 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>sensor_msgs</build_depend>
-  <build_depend>message_generation</build_depend>
-
-  <build_depend>message_generation</build_depend>
-  <run_depend>message_runtime</run_depend>
-
-
+  <build_depend>gender_and_age_msgs</build_depend>
+	
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->

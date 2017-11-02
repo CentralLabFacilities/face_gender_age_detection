@@ -11,9 +11,7 @@ project(gender_and_age)
 find_package(catkin REQUIRED COMPONENTS
    roscpp
    rospy
-   std_msgs
-   sensor_msgs
-   message_generation
+   gender_and_age_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -50,19 +48,14 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-   FILES
-   GenderAndAge.msg
-   GenderProbability.msg
-   AgeProbability.msg
-   GenderAndAgeList.msg
- )
+#add_message_files(
+#   FILES
+# )
 
 ## Generate services in the 'srv' folder
- add_service_files(
-   FILES
-   GenderAndAgeService.srv
- )
+# add_service_files(
+#   FILES
+# )
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -72,11 +65,9 @@ add_message_files(
 # )
 
 ## Generate added messages and services with any dependencies listed here
- generate_messages(
-   DEPENDENCIES
-   sensor_msgs
-   std_msgs  # Or other packages containing msgs
- )
+# generate_messages(
+#   DEPENDENCIES
+# )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -110,7 +101,7 @@ add_message_files(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES gender_and_age
-  CATKIN_DEPENDS message_runtime
+  CATKIN_DEPENDS
 #  DEPENDS system_lib
 )
 
@@ -207,7 +198,4 @@ INSTALL(FILES ${FILES_TO_DEPLOY} DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION} )
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-#install rosjava messages
-install(DIRECTORY ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_MAVEN_DESTINATION}/org/ros/rosjava_messages/
-DESTINATION ${CATKIN_GLOBAL_MAVEN_DESTINATION}/org/ros/rosjava_messages)
 
